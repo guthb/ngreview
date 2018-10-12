@@ -1,3 +1,8 @@
-<p>
-  server works!
-</p>
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p> {{ serverName }}</p>
+<p> {{ 'Server' }} with ID {{ serverId }} is {{ getserverStatus() }}</p>
+<button class="btn btn-primary"[disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<p>{{ allowNewServer }}</p>
+<p>{{ serverCreationStatus }}</p>
+<p [innerText]="allowNewServer"> </p>
