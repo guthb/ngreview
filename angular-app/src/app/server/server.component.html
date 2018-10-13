@@ -7,7 +7,7 @@
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <p></p>
-<button class="btn btn-primary" [disabled]="serverName ===''">Reset Server Name</button>
+<button class="btn btn-primary" [disabled]="serverName ===''"(click)="serverName = ''">Reset Server Name</button>
 
 <p>{{ allowNewServer }}</p>
 
