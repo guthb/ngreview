@@ -20,6 +20,8 @@ export class ServerComponent implements OnInit {
   serverName = '';
   serverCreated = false;
   servers = [ 'TestServer', 'TestServer 2'];
+  showSecret = false;
+  passwordLog = [];
 
   constructor() { 
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -50,5 +52,13 @@ export class ServerComponent implements OnInit {
   getColor(){
     return this.serverStatus === 'online' ? 'green' : 'red';
   }
+
+  onTogglePassword(){
+    this.showSecret = !this.showSecret;
+    console.log(this.passwordLog)
+    this.passwordLog.push(this.passwordLog.length +1)
+  }
+
+
 
 }
