@@ -20,3 +20,13 @@
 </ng-template> -->
 <!-- <app-server></app-server> -->
 <p [innerText]="allowNewServer"> </p>
+
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Password</button> -->
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="onTogglePassword()">Display Password</button>
+        <p *ngIf="showSecret">Secret Password = beans</p>
+        <div *ngFor="let passwordLog of passwordLogs" [ngStyle]="{backgroundColor: passwordLog >= 5 ? 'blue' : 'transparent'}" 
+              [ngClass]="{'white-text': passwordLog >= 5}">{{ passwordLog }}</div>
+    </div>
+</div>
