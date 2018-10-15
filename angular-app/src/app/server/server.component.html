@@ -4,7 +4,9 @@
 <input type="text" class="form-control"[(ngModel)]="serverName">
 
 
-<p [ngStyle]="{backgroundColor:  getColor()}" [ngClass]="{online: serverStatus === 'online'}"> {{ 'Server' }} with ID {{ serverId }} is {{ getserverStatus() }}</p>
+<p [ngStyle]="{backgroundColor:  getColor()}" 
+    [ngClass]="{online: serverStatus === 'online'}"> 
+    {{ 'Server' }} with ID {{ serverId }} is {{ getserverStatus() }}</p>
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <button class="btn btn-primary" [disabled]="serverName ===''"(click)="serverName = ''">Reset Server Name</button>
@@ -26,7 +28,10 @@
     <div class="col-xs-12">
         <button class="btn btn-primary" (click)="onTogglePassword()">Display Password</button>
         <p *ngIf="showSecret">Secret Password = beans</p>
-        <div *ngFor="let passwordLog of passwordLogs" [ngStyle]="{backgroundColor: passwordLog >= 5 ? 'blue' : 'transparent'}" 
-              [ngClass]="{'white-text': passwordLog >= 5}">{{ passwordLog }}</div>
+        <div *ngFor="let log of passwordLog; let i = index" 
+            [ngStyle]="{backgroundColor: i >= 4? 'blue' : 'transparent'}" 
+            [ngClass]="{'white-text': log >= 5}"
+            >{{ passwordLog }}
+        </div>
     </div>
 </div>
