@@ -5,12 +5,15 @@ import { Component, OnInit } from '@angular/core';
   // selector: '[app-server]',
   // selector: '.app-server',
   templateUrl: './server.component.html',
-  //styleUrls: ['./server.component.css']
-  styles: [`
-    .online {
-      color: white;
-    }
-  `]
+  styleUrls: ['./server.component.css']
+  // styles: [`
+  //   .online {
+  //     color: white;
+  //   }
+  //   .white-text {
+  //     colot: white;
+  //   }
+  // `]
 })
 export class ServerComponent implements OnInit {
   serverId: number = 10;
@@ -56,7 +59,9 @@ export class ServerComponent implements OnInit {
   onTogglePassword(){
     this.showSecret = !this.showSecret;
     console.log(this.passwordLog)
-    this.passwordLog.push(this.passwordLog.length +1)
+    //this.passwordLog.push(this.passwordLog.length + 1)
+    this.passwordLog.push(new Date());
+
   }
 
 
