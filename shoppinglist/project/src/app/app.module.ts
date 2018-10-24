@@ -20,6 +20,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
     ShoppingEditComponent,
     RecipeListComponent,
     RecipeDetailComponent
+    
   ],
   imports: [
     BrowserModule
